@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="com/internousdev/ecsite/action/ItemInfoAction.java|com/internousdev/ecsite/action/ItemListAction.java|com/internousdev/ecsite/dao/ItemInfoDAO.java|com/internousdev/ecsite/dto/PaginationDTO.java|com/internousdev/ecsite/dto/ItemInfoDTO.java" kind="src" path="src"/>
+	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/java8">
 		<attributes>
 			<attribute name="owner.project.facets" value="java"/>

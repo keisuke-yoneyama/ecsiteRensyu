@@ -180,11 +180,11 @@
 		<!-- <result name="error">home.jsp</result> -->
 		<!-- </action> -->
 
-		<!-- ItemListAction -->
-		<action name="ItemListAction" class="com.internousdev.ecsite.action.ItemListAction"
-			method="execute">
-			<result name="success">itemList.jsp</result>
-		</action>
+
+		<!-- <action name="ItemListAction" class="com.internousdev.ecsite.action.ItemListAction" -->
+		<!-- method="execute"> -->
+		<!-- <result name="success">itemList.jsp</result> -->
+		<!-- </action> -->
 	</package>
 
 </struts>

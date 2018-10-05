@@ -3,6 +3,7 @@ package com.internousdev.ecsite.dto;
 public class ItemInfoDTO {
 	private int id;
 	private String item_name;
+	private int status;
 	private int item_price;
 	private int item_stock;
 	private String insert_date;
@@ -54,6 +55,14 @@ public class ItemInfoDTO {
 
 	public void setUpdated_date(String updated_date) {
 		this.updated_date = updated_date;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
 }

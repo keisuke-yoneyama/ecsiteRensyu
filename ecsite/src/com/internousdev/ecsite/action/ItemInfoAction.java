@@ -1,12 +1,13 @@
 package com.internousdev.ecsite.action;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Map;
-import java.sql.SQLException;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-
+import com.internousdev.ecsite.dao.ItemInfoDAO;
+import com.internousdev.ecsite.dto.ItemInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ItemInfoAction extends ActionSupport implements SessionAware {
