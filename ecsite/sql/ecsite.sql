@@ -1,5 +1,6 @@
 set names utf8;
 set foreign_key_checks = 0;
+
 drop database if exists ecsite;
 
 create database if not exists ecsite;
@@ -26,6 +27,7 @@ create table item_info_transaction(
 	item_price int,
 	item_stock int,
 	status tinyint not null default 0 comment "ステータス",
+	category_id int not null not null,
 	insert_date datetime,
 	update_date datetime
 );
@@ -44,7 +46,27 @@ create table user_buy_item_transaction(
 	delete_date datetime
 );
 
-INSERT INTO item_info_transaction(item_name,item_price,item_stock,status)VALUES("ノートBook",100,50,0);
+INSERT INTO item_info_transaction(item_name,item_price,item_stock,status,category_id,insert_date)VALUES("家電:ノートBookPC",100,50,0,2,now()),
+("本",400,50,0,3,now()),
+("ホビー:おもちゃ・NintendoSwitch",29800,100,0,4,now());
 
 INSERT INTO login_user_transaction(login_id,login_pass,user_name,is_admin,address)VALUES("internous","internous01","test", "0","東京都葛飾区okudo");
 INSERT INTO login_user_transaction(login_id,login_pass,user_name,is_admin,address)VALUES("admin","admin","test", "1","tokyo2_16_7");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

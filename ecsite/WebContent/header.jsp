@@ -28,7 +28,8 @@
 					<a href='<s:url action="MyPageAction"/>'><input type="button"
 						value="アカウントサービス" class="button"> </a>
 				</s:if></li>
-
+			<li><a href='<s:url action="ItemListAction" />'><input
+					type="button" value="商品一覧" class="button"></a></li>
 			<li><s:if test="#session.id != null">
 					<a href='<s:url action="LogoutAction"/>'><input type="button"
 						value="サインアウト" class="button"> </a>

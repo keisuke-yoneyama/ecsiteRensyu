@@ -10,39 +10,52 @@ import com.internousdev.ecsite.dao.ItemInfoDAO;
 import com.internousdev.ecsite.dto.ItemInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class ItemInfoAction extends ActionSupport implements SessionAware {
-	public Map<String, Object> session;
+public class ItemInfoChangeAction extends ActionSupport implements SessionAware {
+	private int itemId;
+	private Map<String, Object> session;
 	private ItemInfoDAO itemInfoDAO = new ItemInfoDAO();
 	private ArrayList<ItemInfoDTO> itemInfoList = new ArrayList<ItemInfoDTO>();
 	private String deleteFlg;
 	private String message;
 
 	public String execute() throws SQLException {
+		String result = ERROR;
+
+		if (!(itemId == 0)) {
+			session.put("itemId", itemId);
+		}
 		if (!session.containsKey("login_id")) {
-			return ERROR;
+			return result;
 		}
+		result = SUCCESS;
+
 		if (deleteFlg == null) {
-			itemInfoList = itemInfoDAO.getItemInfo();//itemInfoDAOでデータベースから情報をとってくる
-		} else if (deleteFlg.equals("1")) {			//ItemInfoListに代入
+			itemInfoList = itemInfoDAO.getSingleItemInfo(itemId);
+		} else if (deleteFlg.equals("1")) {
 			delete();
+			result = "admin";
 		}
-		String result = SUCCESS;
+
 		return result;
 	}
 
 	public void delete() throws SQLException {
-		int res = itemInfoDAO.itemAllDelete();
+		int res = itemInfoDAO.itemDelete(session.get("itemId").hashCode());
 
 		if (res > 0) {
 			itemInfoList = null;
 			setMessage("商品情報を正しく削除しました。");
 		} else if (res == 0) {
-			setMessage("商品情報の削除に失敗しました。");
+			setMessage("商品の削除に失敗しました。");
 		}
 	}
 
 	public void setDeleteFlg(String deleteFlg) {
 		this.deleteFlg = deleteFlg;
+	}
+
+	public void setItemId(int itemId) {
+		this.itemId = itemId;
 	}
 
 	@Override
@@ -61,5 +74,4 @@ public class ItemInfoAction extends ActionSupport implements SessionAware {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-
 }

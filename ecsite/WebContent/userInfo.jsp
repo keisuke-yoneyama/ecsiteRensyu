@@ -35,7 +35,7 @@
 									<span>変更できません</span>
 								</s:if> <s:else>
 									<s:form action="UserInfoChangeAction">
-										<input type="hidden" name="id"
+										<input type="hidden" name="userId"
 											value='<s:property value="id"/>'>
 										<s:submit value="変更" />
 									</s:form>

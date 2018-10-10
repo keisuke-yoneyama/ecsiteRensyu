@@ -15,39 +15,44 @@
 			<div id="top">
 				<h1>商品情報画面</h1>
 			</div>
-			<div class="marginLeft center">
-
+			<div class="marginLeft">
 				<s:if test="itemInfoList == null">
 					<h3>商品情報はありません。</h3>
 				</s:if>
 				<s:elseif test="message == null">
-					<h3 class="marginTop">商品情報は以下になります。</h3>
-					<table border="1" class="ShowData marginAuto">
+					<h3>商品情報は以下になります。</h3>
+					<table border="1" class="ShowData">
 						<tr>
+							<th>商品ID</th>
 							<th>商品名</th>
-							<th>価格</th>
-							<th>在庫</th>
+							<th>商品価格</th>
+							<th>商品在庫</th>
 						</tr>
 						<s:iterator value="itemInfoList">
 							<tr>
+								<th><s:property value="item_id" /></th>
 								<th><s:property value="item_name" /></th>
 								<th><s:property value="item_price" /><span>円</span></th>
 								<th><s:property value="item_stock" /><span>個</span></th>
-								<th class="center"><s:form action="ItemInfoChangeAction">
-										<input type="hidden" name="itemId"
-											value='<s:property value="id"/>'>
-										<s:submit value="変更" />
-									</s:form></th>
 							</tr>
 						</s:iterator>
 					</table>
 				</s:elseif>
+				<s:form action="ItemInfoModificationAction" class="marginTop">
+					<s:submit value="商品の変更" class="button" />
+				</s:form>
+				<s:form action="ItemInfoChangeAction" class="marginTop">
+					<input type="hidden" name="deleteFlg" value="1">
+					<s:submit value="削除" method="delete" class="button" />
+				</s:form>
 				<s:if test="message != null">
 					<h3>
 						<s:property value="message" />
 					</h3>
 				</s:if>
-
+				<s:form action="GoAdministrationAction" class="marginTop">
+					<s:submit value="管理者画面に戻る" class="button" />
+				</s:form>
 			</div>
 		</div>
 		<jsp:include page="footer.jsp" />

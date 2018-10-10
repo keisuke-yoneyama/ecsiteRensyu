@@ -12,7 +12,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class UserInfoChangeAction extends ActionSupport implements SessionAware {
 
-	private int id;
+	private int userId;
 	public Map<String, Object> session;
 	private UserInfoDAO userInfoDAO = new UserInfoDAO();
 	private ArrayList<UserInfoDTO> userInfoList = new ArrayList<UserInfoDTO>();
@@ -20,14 +20,14 @@ public class UserInfoChangeAction extends ActionSupport implements SessionAware 
 	private String message;
 
 	public String execute() throws SQLException {
-		if (!(id == 0)) {
-			session.put("login_id", id);
+		if (!(userId == 0)) {
+			session.put("userId", userId);
 		}
 		if (!session.containsKey("id")) {
 			return ERROR;
 		}
 		if (deleteFlg == null) {
-			userInfoList = userInfoDAO.getSingleUserInfo(id);
+			userInfoList = userInfoDAO.getSingleUserInfo(userId);
 		} else if (deleteFlg.equals("1")) {
 			delete();
 		}
@@ -37,7 +37,7 @@ public class UserInfoChangeAction extends ActionSupport implements SessionAware 
 	}
 
 	public void delete() throws SQLException {
-		int res = userInfoDAO.userDelete(session.get("login_id").hashCode());
+		int res = userInfoDAO.userDelete(session.get("userId").hashCode());
 
 		if (res > 0) {
 			userInfoList = null;
@@ -51,9 +51,10 @@ public class UserInfoChangeAction extends ActionSupport implements SessionAware 
 		this.deleteFlg = deleteFlg;
 	}
 
-	public void setLogin_id(int id) {
-		this.id = id;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
+	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}

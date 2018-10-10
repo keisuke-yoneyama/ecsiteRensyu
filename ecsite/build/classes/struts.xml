@@ -174,17 +174,29 @@
 			<result name="error">sessionOut.jsp</result>
 		</action>
 
-		<!-- <action name="ItemInfoAction" class="com.internousdev.ecsite.action.ItemInfoAction" -->
-		<!-- method="execute"> -->
-		<!-- <result name="success">itemInfo.jsp</result> -->
-		<!-- <result name="error">home.jsp</result> -->
-		<!-- </action> -->
 
-		<!-- ItemListAction -->
-		<action name="ItemListAction" class="com.internousdev.ecsite.action.ItemListAction"
+		<action name="ItemInfoAction" class="com.internousdev.ecsite.action.ItemInfoAction"
 			method="execute">
-			<result name="success">itemList.jsp</result>
+			<result name="success">itemInfo.jsp</result>
+			<result name="error">home.jsp</result>
 		</action>
+		<!-- ItemInfoChangeAction -->
+		<action name="ItemInfoChangeAction" class="com.internousdev.action.ItemInfoChangeAction"
+			method="execute">
+			<result name="success">itemInfoChange.jsp</result>
+			<result name="error">sessionOut</result>
+			<result name="admin" type="redirectAction">ItemInfoAction</result>
+		</action>
+		<!-- ItemInfoModificationAction -->
+		<!-- <action name="ItemInfoModificationActi" -->
+
+
+
+
+		<!-- <action name="ItemListAction" class="com.internousdev.ecsite.action.ItemListAction" -->
+		<!-- method="execute"> -->
+		<!-- <result name="success">itemList.jsp</result> -->
+		<!-- </action> -->
 	</package>
 
 </struts>

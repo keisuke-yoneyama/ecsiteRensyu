@@ -6,6 +6,7 @@ public class ItemInfoDTO {
 	private int status;
 	private int item_price;
 	private int item_stock;
+	private int category_id;
 	private String insert_date;
 	private String updated_date;
 
@@ -63,6 +64,14 @@ public class ItemInfoDTO {
 
 	public void setStatus(int status) {
 		this.status = status;
+	}
+
+	public int getCategory_id() {
+		return category_id;
+	}
+
+	public void setCategory_id(int category_id) {
+		this.category_id = category_id;
 	}
 
 }
