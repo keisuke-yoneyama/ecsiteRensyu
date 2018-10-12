@@ -22,6 +22,11 @@
 				<table>
 					<s:form action="ItemCreateConfirmAction" method="post">
 						<tr>
+							<th>カテゴリー名</th>
+							<td class="list"><s:radio list="#{2:'家電',3:'本',4:'ホビー' }"
+									name="category_id" value="2" /></td>
+						</tr>
+						<tr>
 							<th>商品名</th>
 							<td><input type="text" name="item_name" class="txt"
 								placeholder="商品名" required />入力必須</td>

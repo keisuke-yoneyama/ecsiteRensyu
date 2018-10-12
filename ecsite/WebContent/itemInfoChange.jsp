@@ -50,7 +50,7 @@
 						<s:property value="message" />
 					</h3>
 				</s:if>
-				<s:form action="GoAdministrationAction" class="marginTop">
+				<s:form action="GoAdminMyPageAction" class="marginTop">
 					<s:submit value="管理者画面に戻る" class="button" />
 				</s:form>
 			</div>

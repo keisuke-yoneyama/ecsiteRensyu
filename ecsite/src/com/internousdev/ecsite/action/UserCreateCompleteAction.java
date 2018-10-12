@@ -5,7 +5,7 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
-import com.internousdev.ecsite.dao.UserCreateCompleteDAO;
+import com.internousdev.ecsite.dao.UserInfoDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserCreateCompleteAction extends ActionSupport implements SessionAware {
@@ -14,10 +14,10 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 	private String user_name;
 	private String address;
 	public Map<String, Object> session;
-	private UserCreateCompleteDAO userCreateCompleteDAO = new UserCreateCompleteDAO();
-
+//	private UserCreateCompleteDAO userCreateCompleteDAO = new UserCreateCompleteDAO();
+	private UserInfoDAO userInfoDAO = new UserInfoDAO();
 	public String execute() throws SQLException {
-		userCreateCompleteDAO.createUser(session.get("login_id").toString(), session.get("login_pass").toString(),
+		userInfoDAO.createUser(session.get("login_id").toString(), session.get("login_pass").toString(),
 				session.get("user_name").toString(), session.get("address").toString());
 
 		String result = SUCCESS;
@@ -61,4 +61,4 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 	public void setAddress(String address) {
 		this.address = address;
 	}
-}
+}//ユーザー情報一覧の修正からスタート

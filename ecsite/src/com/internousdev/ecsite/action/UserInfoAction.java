@@ -37,9 +37,9 @@ public class UserInfoAction extends ActionSupport implements SessionAware{
 		int res = userInfoDAO.userAllDelete();
 
 		if(res > 0){
-			setMessage("商品情報を正しく削除しました。");
+			setMessage("ユーザー情報を正しく削除しました。");
 		}else if(res == 0){
-			setMessage("商品情報の削除に失敗しました。");
+			setMessage("ユーザー情報の削除に失敗しました。");
 		}
 	}
 	public void setDeleteFlg(String deleteFlg){

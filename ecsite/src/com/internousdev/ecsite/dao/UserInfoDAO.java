@@ -112,12 +112,12 @@ public class UserInfoDAO {
 	}
 
 	public void createUser(String login_id_provisional, String login_pass_provisional, String user_name_provisional,
-			String is_admin_provisional, String address_provisional) throws SQLException {
+			String address_provisional) throws SQLException {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 
 		String sql = "insert into login_user_transaction" + " (login_id, login_pass, user_name,"
-				+ " is_admin, insert_date, updated_date) values(?,?,?,0,?,?)";
+				+ " insert_date, updated_date) values(?,?,?,?,?)";
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);

@@ -35,6 +35,7 @@ public class ItemInfoDAO {
 					dto.setItem_name(resultSet.getString("item_name"));
 					dto.setItem_price(resultSet.getInt("item_price"));
 					dto.setItem_stock(resultSet.getInt("item_stock"));
+					dto.setCategory_id(resultSet.getInt("category_id"));
 					itemInfoDTO.add(dto);
 				}
 			} else {
@@ -334,7 +335,7 @@ public class ItemInfoDAO {
 		Connection connection = dbConnector.getConnection();
 
 		String sql = "insert into item_info_transaction(item_name," + " item_price, item_stock, "
-				+ "status, category_id, updated_date) " + "values(?,?,?,?,?,?)";
+				+ "status, category_id, update_date,insert_date) " + "values(?,?,?,?,?,?,?)";
 
 		int error = 0;
 
@@ -346,6 +347,7 @@ public class ItemInfoDAO {
 			preparedStatement.setInt(4, 0);
 			preparedStatement.setInt(5, category_id);
 			preparedStatement.setString(6, dateUtil.getDate());
+			preparedStatement.setString(7, dateUtil.getDate());
 			preparedStatement.execute();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -356,14 +358,14 @@ public class ItemInfoDAO {
 		return error;
 	}
 
-	public int updateItem(int id, String item_name, int category_id, int item_price, int item_stock)
+	public int updateItem(int itemId, String item_name, int category_id, int item_price, int item_stock)
 			throws SQLException {
 
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 
 		String sql = "update item_info_transaction set " + "item_name = ?, " + "category_id = ?, item_price = ?, "
-				+ "item_stock = ?, updated_date = ? where id = ?";
+				+ "item_stock = ?, update_date = ? where id = ?";
 
 		int error = 0;// エラー検知用
 
@@ -374,7 +376,7 @@ public class ItemInfoDAO {
 			preparedStatement.setInt(3, item_price);
 			preparedStatement.setInt(4, item_stock);
 			preparedStatement.setString(5, dateUtil.getDate());
-			preparedStatement.setInt(6, id);
+			preparedStatement.setInt(6, itemId);
 
 			preparedStatement.executeUpdate();
 		} catch (Exception e) {
