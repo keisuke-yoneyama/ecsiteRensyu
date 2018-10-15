@@ -90,6 +90,7 @@ public class ItemInfoDAO {
 					dto.setItem_name(resultSet.getString("item_name"));
 					dto.setItem_price(resultSet.getInt("item_price"));
 					dto.setItem_stock(resultSet.getInt("item_stock"));
+					dto.setCategory_id(resultSet.getInt("category_id"));
 					itemInfoDTO.add(dto);
 				}
 			} else {

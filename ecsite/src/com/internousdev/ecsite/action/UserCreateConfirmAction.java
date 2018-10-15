@@ -1,9 +1,11 @@
 package com.internousdev.ecsite.action;
 
+import java.sql.SQLException;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.ecsite.dao.UserInfoDAO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserCreateConfirmAction extends ActionSupport implements SessionAware {
@@ -13,15 +15,26 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	public Map<String, Object> session;
 	private String errorMassage;
 	private String address;
+	private UserInfoDAO userInfoDAO = new UserInfoDAO();
 
-	public String execute() {
+	public String execute() throws SQLException {
 		String result = SUCCESS;
-		if (!(login_id.equals("")) && !(login_pass.equals("")) && !(user_name.equals(""))
-				&& !(address.equals(""))) {
-			session.put("login_id", login_id);
-			session.put("login_pass", login_pass);
-			session.put("user_name", user_name);
-			session.put("address", address);
+
+		if (!(login_id.equals(""))
+				&& !(login_pass.equals(""))
+				&& !(user_name.equals(""))
+				&& !(address.equals("")))
+		{
+			if(userInfoDAO.userIdCheck(login_id)){
+				setErrorMassage("このログインIDはすでに使用されています。");
+				result = ERROR;
+			}else{
+				result = SUCCESS;
+			}
+//			session.put("login_id", login_id);
+//			session.put("login_pass", login_pass);
+//			session.put("user_name", user_name);
+//			session.put("address", address);
 		} else {
 			setErrorMassage("未入力の項目があります。");
 			result = ERROR;

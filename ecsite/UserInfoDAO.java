@@ -117,8 +117,7 @@ public class UserInfoDAO {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 
-		String sql = "insert into login_user_transaction"
-				+ " (login_id, login_pass, user_name,"
+		String sql = "insert into login_user_transaction" + " (login_id, login_pass, user_name,"
 				+ " insert_date, updated_date) values(?,?,?,?,?)";
 
 		try {
@@ -145,7 +144,7 @@ public class UserInfoDAO {
 		Connection connection = dbConnector.getConnection();
 
 		String sql = "update login_user_transaction set login_id = ?, login_pass = ?,"
-				+ " user_name =?, address=?, updated_date= ? where id= ?";
+				+ " user_name =?, String address=?, updated_date= ?, where id= ?";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, login_id_provisional);

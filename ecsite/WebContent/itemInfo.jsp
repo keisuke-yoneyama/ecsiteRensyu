@@ -35,6 +35,7 @@
 					<h3 class="marginTop">商品情報は以下になります。</h3>
 					<table border="1" class="ShowData marginAuto">
 						<tr>
+							<th>ID</th>
 							<th>カテゴリー</th>
 							<th>商品名</th>
 							<th>価格</th>
@@ -42,6 +43,7 @@
 						</tr>
 						<s:iterator value="itemInfoList">
 							<tr>
+								<th><s:property value="id" /></th>
 								<th><s:if test="category_id == 2">
 										<span>家電</span>
 									</s:if> <s:elseif test="category_id == 3">

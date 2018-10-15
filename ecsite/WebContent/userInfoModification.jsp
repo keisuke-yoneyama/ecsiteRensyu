@@ -38,7 +38,7 @@
 						<tr>
 							<th>パスワード</th>
 							<td><input type="text" name="login_pass" class="txt"
-								value='<s:property value="password"/>' placeholder="パスワード"
+								value='<s:property value="login_pass"/>' placeholder="パスワード"
 								autocomplete="off" /></td>
 						</tr>
 						<tr>

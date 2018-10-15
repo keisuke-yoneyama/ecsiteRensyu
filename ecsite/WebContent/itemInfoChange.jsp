@@ -24,13 +24,25 @@
 					<table border="1" class="ShowData">
 						<tr>
 							<th>商品ID</th>
+							<th>カテゴリー</th>
 							<th>商品名</th>
 							<th>商品価格</th>
 							<th>商品在庫</th>
 						</tr>
 						<s:iterator value="itemInfoList">
 							<tr>
-								<th><s:property value="item_id" /></th>
+								<th><s:property value="id" /></th>
+								<th>
+									<s:if test="category_id == 2">
+										<span>家電</span>
+									</s:if>
+									<s:elseif test="category_id == 3">
+										<span>書籍</span>
+									</s:elseif>
+									<s:elseif test="category_id == 4">
+										<span>ホビー</span>
+									</s:elseif>
+								</th>
 								<th><s:property value="item_name" /></th>
 								<th><s:property value="item_price" /><span>円</span></th>
 								<th><s:property value="item_stock" /><span>個</span></th>

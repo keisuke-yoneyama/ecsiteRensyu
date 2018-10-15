@@ -24,12 +24,16 @@
 			<li><input type="hidden" name="retrievalFlg" value="1">
 				<input type="text" name="keywords" placeholder="キーワードを入力" id="text">
 			</li>
-			<li><s:if test='#session.containsKey("login_id")'>
-					<a href='<s:url action="MyPageAction"/>'><input type="button"
-						value="アカウントサービス" class="button"> </a>
-				</s:if></li>
-			<li><a href='<s:url action="ItemListAction" />'><input
-					type="button" value="商品一覧" class="button"></a></li>
+			<s:if test='#session.is_admin != "1"'>
+				<li><s:if test='#session.containsKey("login_id")'>
+						<a href='<s:url action="MyPageAction"/>'><input type="button"
+							value="アカウントサービス" class="button"> </a>
+					</s:if></li>
+			</s:if>
+			<s:if test='#session.is_admin != "1"'>
+				<li><a href='<s:url action="ItemListAction" />'><input
+						type="button" value="商品一覧" class="button"> </a></li>
+			</s:if>
 			<li><s:if test="#session.id != null">
 					<a href='<s:url action="LogoutAction"/>'><input type="button"
 						value="サインアウト" class="button"> </a>
@@ -40,7 +44,9 @@
 
 
 
-			<li>注文履歴</li>
+			<s:if test='#session.is_admin != "1"'>
+				<li>注文履歴</li>
+			</s:if>
 
 			<s:if test='#session.is_admin != "1"'>
 				<li><a href='<s:url action="HomeAction"/>'><img

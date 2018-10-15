@@ -17,7 +17,7 @@ public class UserInfoModificationCompleteAction extends ActionSupport implements
 		if (!session.containsKey("userId")) {
 			return ERROR;
 		}
-		userInfoDAO.updateUser(session.get("id").hashCode(),
+		userInfoDAO.updateUser(session.get("userId").hashCode(),
 				session.get("login_id_provisional").toString(),
 				session.get("user_name_provisional").toString(),
 				session.get("login_pass_provisional").toString(),

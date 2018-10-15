@@ -23,10 +23,12 @@ public class UserInfoDTO {
 		this.login_pass = login_pass;
 	}
 
-	public String getUserName(){
+
+
+	public String getUser_name() {
 		return user_name;
 	}
-	public void setUser_name(String user_name){
+	public void setUser_name(String user_name) {
 		this.user_name = user_name;
 	}
 	public String getIs_admin(){

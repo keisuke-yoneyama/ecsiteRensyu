@@ -36,8 +36,8 @@ public class UserInfoModificationConfirmAction extends ActionSupport implements 
 			session.put("login_pass_provisional", login_pass);
 		} else {
 			setErrorMessage("未入力の項目があります。");
-			int id = session.get("id").hashCode();
-			userInfoList = userInfoDAO.getSingleUserInfo(id);
+			int userId = session.get("userId").hashCode();
+			userInfoList = userInfoDAO.getSingleUserInfo(userId);
 			result = ERROR;
 		}
 		return result;

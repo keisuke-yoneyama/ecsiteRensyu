@@ -19,6 +19,8 @@
 				<h3>ユーザー情報は以下になります。</h3>
 				<table border="1" class="ShowData marginAuto">
 					<tr>
+						<th>ID</th>
+						<th>管理者権限</th>
 						<th>名前</th>
 						<th>ログインID</th>
 						<th>ログインパスワード</th>
@@ -27,6 +29,12 @@
 					</tr>
 					<s:iterator value="userInfoList">
 						<tr>
+							<th><s:property value="id" /></th>
+							<th><s:if test='is_admin == "1"'>
+									<span>有</span>
+								</s:if> <s:else>
+									<span>無</span>
+								</s:else></th>
 							<th><s:property value="user_name" /></th>
 							<th><s:property value="login_id" /></th>
 							<th><s:property value="login_pass" /></th>
