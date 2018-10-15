@@ -50,6 +50,7 @@ INSERT INTO item_info_transaction(item_name,item_price,item_stock,status,categor
 ("本",400,50,0,3,now()),
 ("ホビー:おもちゃ・NintendoSwitch",29800,100,0,4,now());
 
+INSERT INTO login_user_transaction(login_id,login_pass,user_name,is_admin,address)VALUES("keisuke","keisuke0102","けいすけ","0","Tokyo,katsushika-ku");
 INSERT INTO login_user_transaction(login_id,login_pass,user_name,is_admin,address)VALUES("internous","internous01","test", "0","東京都葛飾区okudo");
 INSERT INTO login_user_transaction(login_id,login_pass,user_name,is_admin,address)VALUES("admin","admin","test", "1","tokyo2_16_7");
 

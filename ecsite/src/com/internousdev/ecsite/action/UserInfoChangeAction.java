@@ -11,7 +11,6 @@ import com.internousdev.ecsite.dto.UserInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserInfoChangeAction extends ActionSupport implements SessionAware {
-
 	private int userId;
 	public Map<String, Object> session;
 	private UserInfoDAO userInfoDAO = new UserInfoDAO();

@@ -31,8 +31,8 @@
 						</tr>
 						<tr>
 							<th>ログインID</th>
-							<td><input type="text" name="user_id" class="txt"
-								value='<s:property value="user_id"/>' placeholder="ログインID"
+							<td><input type="text" name="login_id" class="txt"
+								value='<s:property value="login_id"/>' placeholder="ログインID"
 								autocomplete="off" /></td>
 						</tr>
 						<tr>

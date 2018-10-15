@@ -46,7 +46,7 @@
 				</table>
 				<div class="marginTop">
 					<p>
-						管理者画面へ戻る場合は<a href='<s:url action="AdminLoginAction" />'>こちら</a>
+						管理者画面へ戻る場合は<a href='<s:url action="GoAdminMyPageAction" />'>こちら</a>
 					</p>
 				</div>
 			</div>

@@ -25,9 +25,10 @@ public class UserInfoDAO {
 
 			while (resultSet.next()) {
 				UserInfoDTO dto = new UserInfoDTO();
-				dto.setUser_name(resultSet.getString("user_name"));
+				dto.setId(resultSet.getInt("id"));
 				dto.setLogin_id(resultSet.getString("login_id"));
 				dto.setLogin_pass(resultSet.getString("login_pass"));
+				dto.setUser_name(resultSet.getString("user_name"));
 				dto.setIs_admin(resultSet.getString("is_admin"));
 				dto.setAddress(resultSet.getString("address"));
 				userInfoDTO.add(dto);
@@ -58,15 +59,15 @@ public class UserInfoDAO {
 		return result;
 	}
 
-	public ArrayList<UserInfoDTO> getSingleUserInfo(int id) throws SQLException {
+	public ArrayList<UserInfoDTO> getSingleUserInfo(int userId) throws SQLException {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 
 		ArrayList<UserInfoDTO> userInfoDTO = new ArrayList<UserInfoDTO>();
-		String sql = "select * from login_user_transaction where login_id = ?";
+		String sql = "select * from login_user_transaction where id = ?";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setInt(1, id);
+			preparedStatement.setInt(1, userId);
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			if (resultSet.next()) {
@@ -92,7 +93,7 @@ public class UserInfoDAO {
 		return userInfoDTO;
 	}
 
-	public int userDelete(int login_id) throws SQLException {
+	public int userDelete(int userId) throws SQLException {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 
@@ -101,7 +102,7 @@ public class UserInfoDAO {
 		int result = 0;
 		try {
 			preparedStatement = connection.prepareStatement(sql);
-			preparedStatement.setInt(1, login_id);
+			preparedStatement.setInt(1, userId);
 			result = preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

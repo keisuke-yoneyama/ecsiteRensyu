@@ -2,6 +2,7 @@ package com.internousdev.ecsite.dto;
 
 
 public class UserInfoDTO {
+	private int id;
 	private String login_id;
 	private String login_pass;
 	private String user_name;
@@ -39,5 +40,11 @@ public class UserInfoDTO {
 	}
 	public void setAddress(String address){
 		this.address = address;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 }
