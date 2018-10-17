@@ -28,11 +28,11 @@
 			</div>
 			<s:if test='#session.containsKey("address")'>
 				<h2>
-					お届け先:
+					管理人:
 					<s:property value="#session.user_name" />
 					さん<br>
+					住所:
 					<s:property value="#session.address" />
-					にお届け
 				</h2>
 			</s:if>
 

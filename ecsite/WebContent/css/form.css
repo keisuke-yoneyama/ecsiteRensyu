@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+
+/* 入力フォーム共通CSS */
+.subTitle{
+	margin-top:30px;
+	text-align: center;
+	font-size: 30px;
+	color: #004080;
+}

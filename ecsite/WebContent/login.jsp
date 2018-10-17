@@ -15,36 +15,53 @@
 <title>LOGIN画面</title>
 <link rel="stylesheet" href="./css/style.css">
 </head>
+<jsp:include page="header.jsp" />
 <body>
+
 	<div id="container">
-		<jsp:include page="header.jsp" />
+
 
 		<div id="main" class="clear">
-			<div id="top">
-				<p>サインイン画面</p>
-			</div>
-			<div>
-				<h2>サインインをしてより便利に</h2>
-				<s:form action="LoginAction">
-					<s:textfield name="login_id" />
-					<s:password name="login_pass" />
-					<s:submit value="ログイン" />
-				</s:form>
-				<br />
-				<div id="text-link">
-					<p>
-						新規ユーザー登録は <a href='<s:url action="UserCreateAction"/>'>こちら</a>
-					</p>
-					<p>
-						Homeへ戻る場合は <a href='<s:url action="GoHomeAction"/>'>こちら</a>
-					</p>
-				</div>
-			</div>
+			<h1 class="subTitle">Yonezonへサインイン</h1>
 
-			<jsp:include page="footer.jsp" />
+			<s:form class="Form" action="LoginAction">
+				<ul class="input">
+					<!-- LoginId入力 -->
+					<li>
+						<dl>
+							<dt class="label">ログインID</dt>
+							<dt>
+								<s:textfield class="textbox" name="login_id"
+									placeholder="ログインIDを入力" />
+							</dt>
+						</dl>
+					</li>
+					<!-- password入力 -->
+					<li>
+						<dl>
+							<dt class="label">パスワード</dt>
+							<dt>
+								<s:password class="textbox" name="login_pass"
+								placeholder="パスワードを入力"/>
+							</dt>
+						</dl>
+					</li>
+					<!-- 送信ボタン -->
+					<li>
+						<dl>
+							<s:submit value="ログイン" />
+						</dl>
+					</li>
+					<!-- 新規登録へのリンク -->
+					<li><a href='<s:url action="UserCreateAction"/>' class="link">新規アカウント作成</a>
+					</li>
+					<!-- homeへlink -->
+					<li><a href='<s:url action="GoHomeAction"/>' class="link">ホーム画面へ</a>
+					</li>
+				</ul>
+			</s:form>
 		</div>
 	</div>
-
-
 </body>
+<jsp:include page="footer.jsp" />
 </html>

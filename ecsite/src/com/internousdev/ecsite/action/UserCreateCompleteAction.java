@@ -14,15 +14,20 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 	private String user_name;
 	private String address;
 	public Map<String, Object> session;
-//	private UserCreateCompleteDAO userCreateCompleteDAO = new UserCreateCompleteDAO();
+
 	private UserInfoDAO userInfoDAO = new UserInfoDAO();
+
 	public String execute() throws SQLException {
-		userInfoDAO.createUser(session.get("login_id").toString(), session.get("login_pass").toString(),
-				session.get("user_name").toString(), session.get("address").toString());
+		System.out.println("login_id;" + login_id);
+		System.out.println("login_pass;" + login_pass);
+		System.out.println("user_name;" + user_name);
+		System.out.println("address;" + address);
+		userInfoDAO.createUser(login_id, login_pass, user_name, address);
 
-		String result = SUCCESS;
+		session.put("id", login_id);
+		session.put("login_id", login_id);
 
-		return result;
+		return SUCCESS;
 	}
 
 	public String getLogin_id() {
@@ -37,7 +42,7 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 		return login_pass;
 	}
 
-	public void setLoginPassword(String login_pass) {
+	public void setLogin_pass(String login_pass) {
 		this.login_pass = login_pass;
 	}
 
@@ -45,13 +50,8 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 		return user_name;
 	}
 
-	public void setUserName(String user_name) {
+	public void setUser_name(String user_name) {
 		this.user_name = user_name;
-	}
-
-	@Override
-	public void setSession(Map<String, Object> session) {
-		this.session = session;
 	}
 
 	public String getAddress() {
@@ -61,4 +61,9 @@ public class UserCreateCompleteAction extends ActionSupport implements SessionAw
 	public void setAddress(String address) {
 		this.address = address;
 	}
-}//ユーザー情報一覧の修正からスタート
+
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+}// ユーザー情報一覧の修正からスタート

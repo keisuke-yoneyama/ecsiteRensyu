@@ -117,17 +117,17 @@ public class UserInfoDAO {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 
-		String sql = "insert into login_user_transaction"
-				+ " (login_id, login_pass, user_name,"
-				+ " insert_date, updated_date) values(?,?,?,?,?)";
+		String sql = "insert into login_user_transaction" + " (login_id, login_pass, user_name, address,"
+				+ " insert_date, updated_date) values(?,?,?,?,?,?)";
 
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, login_id_provisional);
 			preparedStatement.setString(2, login_pass_provisional);
 			preparedStatement.setString(3, user_name_provisional);
-			preparedStatement.setString(4, dateUtil.getDate());
+			preparedStatement.setString(4, address_provisional);
 			preparedStatement.setString(5, dateUtil.getDate());
+			preparedStatement.setString(6, dateUtil.getDate());
 
 			preparedStatement.execute();
 

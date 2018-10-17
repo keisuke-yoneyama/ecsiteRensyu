@@ -17,38 +17,44 @@
 <body>
 	<div id="container">
 		<jsp:include page="header.jsp" />
-	<div id="main" class="clear">
-		<div id="top">
-			<p>UserCreateConfirm</p>
-		</div>
-		<div>
-			<h3>登録する内容は以下でよろしいですか。</h3>
-			<table>
+		<div id="main" class="clear">
+			<div id="top">
+				<p>UserCreateConfirm</p>
+			</div>
+			<div>
+				<h3>登録する内容は以下でよろしいですか。</h3>
 				<s:form action="UserCreateCompleteAction">
-					<tr id="box">
-						<td><label>ログインID:</label></td>
-						<td><s:property value="login_id" escape="false" /></td>
-					</tr>
-					<tr id="box">
-						<td><label>ログインPASS:</label></td>
-						<td><s:property value="login_pass" escape="false" /></td>
-					</tr>
-					<tr id="box">
-						<td><label>ユーザー名:</label></td>
-						<td><s:property value="user_name" escape="false" /></td>
-					</tr>
-					<tr id="box">
-						<td><label>宛先:</label></td>
-						<td><s:property value="address" escape="false" /></td>
-					</tr>
-					<tr>
-						<td><s:submit value="完了" /></td>
-					</tr>
+					<table>
+
+						<tr id="box">
+							<td><label>ログインID:</label></td>
+							<td><s:property value="login_id" escape="false" /></td>
+						</tr>
+						<tr id="box">
+							<td><label>ログインPASS:</label></td>
+							<td><s:property value="login_pass" escape="false" /></td>
+						</tr>
+						<tr id="box">
+							<td><label>ユーザー名:</label></td>
+							<td><s:property value="user_name" escape="false" /></td>
+						</tr>
+						<tr id="box">
+							<td><label>宛先:</label></td>
+							<td><s:property value="address" escape="false" /></td>
+						</tr>
+						<tr>
+							<td><s:submit value="完了" /></td>
+						</tr>
+
+					</table>
+					<s:hidden name="login_id" value="%{login_id}" />
+					<s:hidden name="login_pass" value="%{login_pass}" />
+					<s:hidden name="user_name" value="%{user_name}" />
+					<s:hidden name="address" value="%{address}" />
 				</s:form>
-			</table>
+			</div>
 		</div>
-	</div>
-	<jsp:include page="footer.jsp" />
+		<jsp:include page="footer.jsp" />
 	</div>
 </body>
 </html>

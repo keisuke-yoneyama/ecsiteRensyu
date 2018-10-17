@@ -5,47 +5,46 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="Content-Style-Type" content="text/css" />
-<meta http-equiv="Content-Script-Type" content="text/javascript" />
-<meta http-equiv="imagetoolbar" content="no" />
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-
-<title>UserCreate画面</title>
-
+<title>ユーザー情報入力</title>
 <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 	<div id="container">
 		<jsp:include page="header.jsp" />
-
 		<div id="main" class="clear">
 			<div id="top">
-				<p>UserCreate</p>
+				<h1>ユーザー情報入力画面</h1>
 			</div>
+			<s:if test="errorMassage !=''">
+				<s:property value="errorMassage" escape="false" />
+			</s:if>
 			<div>
-				<s:if test="errorMassage !=''">
-					<s:property value="errorMassage" escape="false" />
-				</s:if>
-				<table>
+				<table class="verticalTable">
 					<s:form action="UserCreateConfirmAction">
 						<tr>
 							<td><label>ログインID:</label></td>
-							<td><input type="text" name="login_id" value="" /></td>
+							<td><s:textfield type="txt" placeholder="ログインID"
+									name="login_id" autocomplete="off" value="%{login_id}" /></td>
 						</tr>
 						<tr>
 							<td><label>ログインPASS:</label></td>
-							<td><input type="text" name="login_pass" value="" /></td>
+							<td><s:password type="txt" placeholder="パスワード"
+									name="login_pass" autocomplete="off" value="%{login_pass}" /></td>
 						</tr>
 						<tr>
 							<td><label>ユーザー名:</label></td>
-							<td><input type="text" name="user_name" value="" /></td>
+							<td><s:textfield type="txt" placeholder="名前"
+									name="user_name" autocomplete="off" value="%{user_name}" /></td>
 						</tr>
 						<tr>
 							<td><label>宛先:</label></td>
-							<td><input type="text" name="address" value="" /></td>
+							<td><s:textfield type="txt" placeholder="宛先" name="address"
+									autocomplete="off" value="%{address}" /></td>
 						</tr>
-						<s:submit value="登録" />
+						<tr>
+							<td colspan="2" class="center"><s:submit value="登録"
+									class="button marginTop" /></td>
+						</tr>
 					</s:form>
 				</table>
 				<div>
