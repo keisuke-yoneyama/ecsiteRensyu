@@ -6,6 +6,7 @@
 <meta charset="UTF-8" />
 <title>商品情報変更完了</title>
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/form.css">
 </head>
 <body>
 	<div id="container">

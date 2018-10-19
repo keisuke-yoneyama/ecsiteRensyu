@@ -14,6 +14,7 @@
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <title>BuyItemConfirm画面</title>
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/form.css">
 </head>
 <body>
 	<div id="container">

@@ -44,7 +44,7 @@
 
 
 
-			<div id="text-center">
+			<div >
 				<s:form action="HomeAction">
 					<s:submit value="商品購入" />
 				</s:form>

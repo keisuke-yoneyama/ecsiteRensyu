@@ -5,6 +5,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/form.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>商品登録完了</title>
 </head>

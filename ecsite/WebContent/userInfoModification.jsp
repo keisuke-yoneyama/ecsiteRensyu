@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>ユーザ情報の変更を入力</title>
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/form.css">
 </head>
 <body>
 	<div id="container">

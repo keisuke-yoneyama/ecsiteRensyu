@@ -17,7 +17,7 @@
 	/* 	表示の優先順位 */
 	width: 50%;
 	height: auto;
-	margin: 0 auto;
+	margin-left:100px;
 
 	background-color: #fff;
 	border-radius: 10px;
@@ -27,7 +27,9 @@
 	list-style: none;
 	text-align: center;
 }
-
+.FormList{
+/* 	text-align: center; */
+}
 /* 入力欄全体 */
 .input {
 

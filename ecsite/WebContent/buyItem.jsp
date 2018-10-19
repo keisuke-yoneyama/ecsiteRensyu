@@ -13,6 +13,7 @@
 
 <title>商品購入画面</title>
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/form.css">
 </head>
 <body>
 	<div id="container">

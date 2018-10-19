@@ -13,6 +13,7 @@
 <meta name="keywords" content="" />
 <title>管理者エラーページ</title>
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/form.css">
 </head>
 <body>
 	<div id="container">

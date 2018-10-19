@@ -8,9 +8,8 @@
 <meta charset="UTF-8" />
 
 <title>ヘッダー</title>
-<!-- <link rel="stylesheet" href="./css/header.css"> -->
 </head>
-<body>
+	<body>
 	<div id="header">
 	<ul>
 		<li><a href='<s:url action="GoHomeAction"/>'><input
@@ -50,11 +49,10 @@
 		</s:if>
 
 		<s:if test='#session.is_admin != "1"'>
-			<li><a href='<s:url action="HomeAction"/>'><img
-					src="images/cart.png" alt="cart" width="180" height="120"
-					class="cartButton" ></a></li>
+			<li><a href='<s:url action="LoginAction"/>'><input type="button"
+					value="カート" class="button"> </a></li>
 		</s:if>
 	</ul>
 	</div>
-</body>
+	</body>
 </html>

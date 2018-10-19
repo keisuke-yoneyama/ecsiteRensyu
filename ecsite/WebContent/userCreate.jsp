@@ -7,6 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>ユーザー情報入力</title>
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/form.css">
 </head>
 <body>
 	<div id="container">
@@ -18,9 +19,9 @@
 			<s:if test="errorMassage !=''">
 				<s:property value="errorMassage" escape="false" />
 			</s:if>
-			<div>
-				<table class="verticalTable">
-					<s:form action="UserCreateConfirmAction">
+			<div class="Form">
+				<table class="FromList">
+					<s:form  action="UserCreateConfirmAction">
 						<tr>
 							<td><label>ログインID:</label></td>
 							<td><s:textfield type="txt" placeholder="ログインID"
@@ -43,7 +44,7 @@
 						</tr>
 						<tr>
 							<td colspan="2" class="center"><s:submit value="登録"
-									class="button marginTop" /></td>
+									class="button" /></td>
 						</tr>
 					</s:form>
 				</table>

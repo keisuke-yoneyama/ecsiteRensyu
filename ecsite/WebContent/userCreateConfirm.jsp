@@ -13,6 +13,7 @@
 
 <title>UserCreateConfirm画面</title>
 <link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/form.css">
 </head>
 <body>
 	<div id="container">
@@ -23,8 +24,8 @@
 			</div>
 			<div>
 				<h3>登録する内容は以下でよろしいですか。</h3>
-				<s:form action="UserCreateCompleteAction">
-					<table>
+				<s:form  action="UserCreateCompleteAction">
+					<table class="Form">
 
 						<tr id="box">
 							<td><label>ログインID:</label></td>
@@ -43,7 +44,7 @@
 							<td><s:property value="address" escape="false" /></td>
 						</tr>
 						<tr>
-							<td><s:submit value="完了" /></td>
+							<td><s:submit class="button" value="完了" /></td>
 						</tr>
 
 					</table>
