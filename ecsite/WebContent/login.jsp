@@ -13,6 +13,7 @@
 <meta name="keywords" content="" />
 
 <title>LOGIN画面</title>
+<link rel="stylesheet" href="./css/form.css">
 <link rel="stylesheet" href="./css/style.css">
 </head>
 <jsp:include page="header.jsp" />
@@ -25,33 +26,15 @@
 			<h1 class="subTitle">Yonezonへサインイン</h1>
 
 			<s:form class="Form" action="LoginAction">
-				<ul class="input">
+				<ul>
 					<!-- LoginId入力 -->
-					<li>
-						<dl>
-							<dt class="label">ログインID</dt>
-							<dt>
-								<s:textfield class="textbox" name="login_id"
-									placeholder="ログインIDを入力" />
-							</dt>
-						</dl>
-					</li>
+					<li><s:textfield class="textbox" name="login_id"
+							placeholder="ログインIDを入力" /></li>
 					<!-- password入力 -->
-					<li>
-						<dl>
-							<dt class="label">パスワード</dt>
-							<dt>
-								<s:password class="textbox" name="login_pass"
-								placeholder="パスワードを入力"/>
-							</dt>
-						</dl>
-					</li>
+					<li><s:password class="textbox" name="login_pass"
+							placeholder="パスワードを入力" /></li>
 					<!-- 送信ボタン -->
-					<li>
-						<dl>
-							<s:submit value="ログイン" />
-						</dl>
-					</li>
+					<li><s:submit class="button" id="loginButton" value="ログイン" /></li>
 					<!-- 新規登録へのリンク -->
 					<li><a href='<s:url action="UserCreateAction"/>' class="link">新規アカウント作成</a>
 					</li>

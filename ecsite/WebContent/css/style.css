@@ -1,5 +1,63 @@
 @CHARSET "UTF-8";
 /* 共通ページの共通レイアウト */
- body {
+body {
+	padding-top: 30px;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	background-image: linear-gradient(-90deg, #C5FA6B, #67D6FE);
+}
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
+#header{
+	background-color:white;
+}
+#header ul {
+	line-height: 40px;
+}
+
+#header li {
+	display: inline-block;
+}
+
+/* micro clearfix */
+.cf:before, .cf:after {
+	content: " ";
+	display: table;
+}
+
+.cf:after {
+	clear: both;
+}
+
+.cf {
+	*zoom: 1;
+}
+
+.cartButton {
+	border-radius: 20px;
+}
+/* 以下レイアウト */
+/* header.css参照 */
+
+/* ホームレイアウト */
+#main {
+	clear: both;
+	margin: 0 auto;
+	width: 1200px;
+}
+
+#footer {
+	width: 100%;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	font-size: 24px;
+	position: absolute;
+	bottom: 0;
 }

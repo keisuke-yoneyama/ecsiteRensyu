@@ -11,17 +11,19 @@
 <meta name="description" content="" />
 <meta name="keywords" content="" />
 <link rel="stylesheet" href="./css/style.css" />
+<link rel="stylesheet" href="./css/form.css" />
 <title>Home画面</title>
 </head>
+<jsp:include page="header.jsp" />
 <body>
 	<div id="container">
-		<jsp:include page="header.jsp" />
+
 		<div id="main" class="clear">
 
 
 
 			<div id="top" style="height: 97px;">
-				<p>ホーム画面</p>
+				<p class="subTitle">Yonezonへようこそ！</p>
 			</div>
 			<s:if test='#session.containsKey("user_name")'>
 				<h2>
@@ -31,9 +33,12 @@
 			</s:if>
 
 			<s:if test='#session.containsKey("address")'>
-				<h2>お届け先:
-					<s:property value="#session.user_name" />さん<br>
-					<s:property value="#session.address" />にお届け
+				<h2>
+					お届け先:
+					<s:property value="#session.user_name" />
+					さん<br>
+					<s:property value="#session.address" />
+					にお届け
 				</h2>
 			</s:if>
 
@@ -53,7 +58,8 @@
 				</s:if>
 			</div>
 		</div>
-		<jsp:include page="footer.jsp" />
+
 	</div>
 </body>
+<jsp:include page="footer.jsp" />
 </html>
